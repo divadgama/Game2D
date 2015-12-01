@@ -1,7 +1,9 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleInput.h"
+#include "ModuleSound.h"
 #include "SDL/include/SDL.h"
+
 
 ModuleInput::ModuleInput()
 {}
@@ -29,13 +31,38 @@ bool ModuleInput::Init()
 // Called every draw update
 update_status ModuleInput::Update()
 {
-	SDL_PumpEvents();
+	//SDL_PumpEvents();
+	
+	//keyboard = SDL_GetKeyboardState(NULL);
 
-	keyboard = SDL_GetKeyboardState(NULL);
+	//if (keyboard[SDL_SCANCODE_ESCAPE]) {
+		//return UPDATE_STOP;
+	//}
 
-	if (keyboard[SDL_SCANCODE_ESCAPE]) {
-		return UPDATE_STOP;
-	}
+	while (SDL_PollEvent(&my_event)) { // loop list event
+	switch (my_event.type) { // type event
+		 
+		case SDL_KEYDOWN: // keyboard
+
+			 if (my_event.key.keysym.sym == SDLK_ESCAPE) // Escape
+				 return UPDATE_STOP;
+
+			 if (my_event.key.keysym.sym == SDLK_SPACE) // Space
+			 {
+				 LOG("SOUND SOUND SOUND");
+				if(!App->sound->SoundJump())//return true if sound corret
+					return UPDATE_ERROR;
+
+				 return UPDATE_CONTINUE;
+			 }
+
+		 break;
+		 case SDL_QUIT: //"x" window
+					 return UPDATE_STOP;
+		 break;
+					
+		}
+	}
 
 	// TODO 1: Make the application properly close when ESC is pressed (do not use exit())
 

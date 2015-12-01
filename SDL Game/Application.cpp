@@ -5,6 +5,7 @@
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
 #include "ModuleScene.h"
+#include "ModuleSound.h"
 
 using namespace std;
 
@@ -17,21 +18,28 @@ Application::Application()
 	modules.push_back(input = new ModuleInput());
 
 	// TODO 7: Create a new "scene" module that loads a texture and draws it on the screen
+
 	modules.push_back(scene = new ModuleScene());
 
 
 	// Homework: Create a new module to handle music and sound effects
+	modules.push_back(sound = new ModuleSound());
 }
 
 Application::~Application()
 {
 	// TODO 6: Free module memory and check the result in Dr. Memory
-	for (list<Module*>::iterator it = modules.begin(); it != modules.end(); ++it)
+	for (list<Module*>::iterator it = modules.begin(); it != modules.end(); ++it){
 		(*it)->CleanUp();
+		//delete (*it);
+	}
+
 	delete window;
 	delete renderer;
 	delete textures;
 	delete input;
+	delete scene;
+	delete sound;
 }
 
 bool Application::Init()
