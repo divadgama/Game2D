@@ -1,6 +1,4 @@
 #include "ModuleScene.h"
-#include "ModuleTextures.h"
-#include "ModuleRender.h"
 #include "Application.h"
 
 ModuleScene::ModuleScene()
@@ -24,14 +22,18 @@ bool ModuleScene::Start(){
 
 	LOG("Scene Start.............");
 	
-	
+	texturePlayer = App->textures->Load("../Game/"SPRITE_FILE);// load texture player 
+	if (texturePlayer==NULL){
+		LOG("Texture player don't load")
+		return false;
+	}
 
     return true;
 }
 
 update_status ModuleScene::Update(){
 
-	if (!(App->renderer->Blit(App->textures->Load("../Game/"SPRITE_FILE), 0, 0, NULL)))//render return true
+	if (!(App->renderer->Blit(texturePlayer, 0, 0, NULL)))//render return true
 		return UPDATE_ERROR;
 
 	return UPDATE_CONTINUE;

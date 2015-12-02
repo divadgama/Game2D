@@ -2,6 +2,8 @@
 
 #include "Globals.h"
 #include "Module.h"
+#include "ModuleTextures.h"
+#include "ModuleRender.h"
 
 
 class ModuleScene : public Module
@@ -16,6 +18,8 @@ public:
 	bool CleanUp();
 
 
+private:
+	SDL_Texture* texturePlayer=NULL;
 
 
 };
