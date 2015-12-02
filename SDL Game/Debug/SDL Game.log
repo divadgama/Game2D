@@ -1,8 +1,19 @@
-﻿Build started 02/12/2015 10:05:58.
+﻿Build started 02/12/2015 13:31:31.
      1>Project "C:\Users\David\Documents\GitHub\Game2D\SDL Game\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleScene.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Application.cpp Main.cpp ModuleInput.cpp ModuleRender.cpp ModuleScene.cpp ModuleSound.cpp ModuleTextures.cpp ModuleWindow.cpp log.cpp
+         ModuleSound.cpp
          ModuleScene.cpp
+         ModuleInput.cpp
+         Generating Code...
+         Compiling...
+         log.cpp
+         ModuleWindow.cpp
+         ModuleTextures.cpp
+         ModuleRender.cpp
+         Main.cpp
+         Application.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\David\Documents\GitHub\Game2D\SDL Game\Debug\SDL Game - Master 1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\David\Documents\GitHub\Game2D\SDL Game\Debug\SDL Game - Master 1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\David\Documents\GitHub\Game2D\SDL Game\Debug\SDL Game - Master 1.lib" /MACHINE:X86 Debug\Application.obj
          Debug\log.obj
@@ -18,4 +29,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.91
+Time Elapsed 00:00:03.80

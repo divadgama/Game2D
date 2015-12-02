@@ -27,35 +27,57 @@ bool ModuleSound::Init(){
 		return false;
 	}
 
-	musicGame = Mix_LoadMUS(SONG_GAME);
-	if (musicGame == NULL) {
-		LOG("Problem load music %s\n", Mix_GetError());
-		return false;
-	}
-
-	jump = Mix_LoadWAV(SONG_JUMP);
-	if (jump == NULL) {
-		LOG("Problem load sound jump %s\n", Mix_GetError());
-		return false;
-	}
-
 	return true;
 }
 
 
 bool ModuleSound::Start(){
+	
+
+	return true;
+}
+
+Mix_Music* const ModuleSound::LoadMusicLevel(const char* path)
+{
+	Mix_Music* musicLevel = NULL;
+
+	musicLevel = Mix_LoadMUS(path);
+	if (musicLevel == NULL) {
+		LOG("Problem load music %s\n", Mix_GetError());
+		return NULL;
+	}
+
+	return musicLevel;
+}
+
+bool const ModuleSound::PlayMusicLevel(Mix_Music* song){
+	
 	// Paly music
 	// this funtion return the number channel 
-	if (Mix_PlayMusic(musicGame, -1) != 0)
+	if (Mix_PlayMusic(song, -1) != 0)
 		return false;
 	return true;
+
 }
 
-bool ModuleSound::SoundJump(){
+Mix_Chunk* const ModuleSound::LoadSound(const char* path){
 
-	Mix_PlayChannel(-1, jump, 0);
+	Mix_Chunk *sound = NULL;
+
+	sound = Mix_LoadWAV(path);
+	if (sound == NULL) {
+		LOG("Problem load sound jump %s\n", Mix_GetError());
+		return NULL;
+	}
+	return sound;
+}
+
+bool const ModuleSound::PlaySoundEspecific(Mix_Chunk * sound){
+
+	Mix_PlayChannel(-1, sound, 0);
 	return true;
 }
+
 
 bool ModuleSound::CleanUp(){
 	

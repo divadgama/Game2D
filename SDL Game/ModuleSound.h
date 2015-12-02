@@ -18,11 +18,11 @@ public:
 	bool CleanUp();
 
 public:
-	bool SoundJump();
 
-private:
-	Mix_Music *musicGame = NULL;
-	Mix_Chunk *jump = NULL;
-	int channel = 0;
+	Mix_Music* const LoadMusicLevel(const char* path);
+	Mix_Chunk* const LoadSound(const char* path);
+	bool const PlayMusicLevel(Mix_Music*);
+	bool const PlaySoundEspecific(Mix_Chunk *);
+
 };
 

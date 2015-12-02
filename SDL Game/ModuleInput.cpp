@@ -1,7 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleInput.h"
-#include "ModuleSound.h"
+#include "ModuleScene.h"
 #include "SDL/include/SDL.h"
 
 
@@ -50,7 +50,7 @@ update_status ModuleInput::Update()
 			 if (my_event.key.keysym.sym == SDLK_SPACE) // Space
 			 {
 				 LOG("SOUND SOUND SOUND");
-				if(!App->sound->SoundJump())//return true if sound corret
+				if(!App->scene->Jump())//return true if sound corret
 					return UPDATE_ERROR;
 
 				 return UPDATE_CONTINUE;

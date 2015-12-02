@@ -23,5 +23,5 @@ enum update_status
 #define VSYNC true
 #define TITLE "Super Awesome Game"
 #define SPRITE_FILE "sprites.png"
-#define SONG_GAME "Skrillex.mp3"
-#define SONG_JUMP "jump.wav"
+#define SONG_LEVEL1 "Skrillex.mp3"
+#define SOUND_JUMP "jump.wav"
